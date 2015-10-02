@@ -1,13 +1,22 @@
-var profileRouter = function ($stateProvider) {
-		$stateProvider
-			.state('profile',{
-				url:'/profile',
-				controller: require("./profile.controller.js"),
-				controllerAs: 'ctrl',
-				bindToController: true,
-				templateUrl: 'app/router/profile/profile.template.html',
-				title:'Profile'
-			});
-	};
+function profileRoute(angular){
 
-module.exports = profileRouter;
+	// loads controller
+	var controller = require('./profile.controller.js');
+
+	angular.module('app')
+		.config(['$stateProvider',
+			function($stateProvider){
+				$stateProvider
+					.state('profile',{
+						url:'/profile',
+						controller: controller,
+						controllerAs: 'ctrl',
+						bindToController: true,
+						templateUrl: 'app/router/profile/profile.template.html',
+						title:'Profile'
+					});
+			}
+		]);
+}
+
+module.exports = profileRoute;
