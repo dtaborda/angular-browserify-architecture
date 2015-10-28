@@ -3,6 +3,8 @@ function profileRoute(angular){
 	// loads controller
 	var controller = require('./profile.controller.js');
 
+	require('../../components/card/')(angular);
+
 	angular.module('app')
 		.config(['$stateProvider',
 			function($stateProvider){

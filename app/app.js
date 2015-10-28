@@ -5,6 +5,8 @@ var angular = require('angular'),
 
 angular.module('app', [uiRouter]);
 
+require('./components/nav-bar/index.js')(angular);
+
 // load routes
 require('./router/profile/profile.router.js')(angular);
 require('./router/home/home.router.js')(angular);
